@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConsumerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConsumerService_GetConsumer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumer" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetConsumer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetConsumerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumerById" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetConsumerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetConsumerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumerId" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetConsumerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetAllConsumers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConsumers" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetAllConsumers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConsumersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetAllConsumersList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConsumersList" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetAllConsumersList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConsumersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveMarketerConsumer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMarketerConsumer" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveMarketerConsumer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMarketerConsumerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveConsumer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConsumer" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveConsumer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConsumerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveConsumerBillingAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConsumerBillingAddress" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveConsumerBillingAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConsumerBillingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveConsumerShippingAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConsumerShippingAddress" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveConsumerShippingAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConsumerShippingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_DeleteConsumer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConsumer" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_DeleteConsumer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConsumerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_DeleteConsumerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConsumerById" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_DeleteConsumerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConsumerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetConsumerOffers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumerOffers" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_GetConsumerOffers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumerOffersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveConsumerOffer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConsumerOffer" />
+  </wsdl:message>
+  <wsdl:message name="IConsumerService_SaveConsumerOffer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConsumerOfferResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IConsumerService">
+    <wsdl:operation name="GetConsumer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/GetConsumer" message="tns:IConsumerService_GetConsumer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/GetConsumerResponse" message="tns:IConsumerService_GetConsumer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/GetConsumerById" message="tns:IConsumerService_GetConsumerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/GetConsumerByIdResponse" message="tns:IConsumerService_GetConsumerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/GetConsumerId" message="tns:IConsumerService_GetConsumerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/GetConsumerIdResponse" message="tns:IConsumerService_GetConsumerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConsumers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/GetAllConsumers" message="tns:IConsumerService_GetAllConsumers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/GetAllConsumersResponse" message="tns:IConsumerService_GetAllConsumers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConsumersList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/GetAllConsumersList" message="tns:IConsumerService_GetAllConsumersList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/GetAllConsumersListResponse" message="tns:IConsumerService_GetAllConsumersList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMarketerConsumer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/SaveMarketerConsumer" message="tns:IConsumerService_SaveMarketerConsumer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/SaveMarketerConsumerResponse" message="tns:IConsumerService_SaveMarketerConsumer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/SaveConsumer" message="tns:IConsumerService_SaveConsumer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/SaveConsumerResponse" message="tns:IConsumerService_SaveConsumer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumerBillingAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/SaveConsumerBillingAddress" message="tns:IConsumerService_SaveConsumerBillingAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/SaveConsumerBillingAddressResponse" message="tns:IConsumerService_SaveConsumerBillingAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumerShippingAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/SaveConsumerShippingAddress" message="tns:IConsumerService_SaveConsumerShippingAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/SaveConsumerShippingAddressResponse" message="tns:IConsumerService_SaveConsumerShippingAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConsumer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/DeleteConsumer" message="tns:IConsumerService_DeleteConsumer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/DeleteConsumerResponse" message="tns:IConsumerService_DeleteConsumer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConsumerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/DeleteConsumerById" message="tns:IConsumerService_DeleteConsumerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/DeleteConsumerByIdResponse" message="tns:IConsumerService_DeleteConsumerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerOffers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/GetConsumerOffers" message="tns:IConsumerService_GetConsumerOffers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/GetConsumerOffersResponse" message="tns:IConsumerService_GetConsumerOffers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumerOffer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumerService/SaveConsumerOffer" message="tns:IConsumerService_SaveConsumerOffer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumerService/SaveConsumerOfferResponse" message="tns:IConsumerService_SaveConsumerOffer_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IConsumerService" type="tns:IConsumerService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetConsumer">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/GetConsumer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerById">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/GetConsumerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerId">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/GetConsumerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConsumers">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/GetAllConsumers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConsumersList">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/GetAllConsumersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMarketerConsumer">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/SaveMarketerConsumer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumer">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/SaveConsumer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumerBillingAddress">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/SaveConsumerBillingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumerShippingAddress">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/SaveConsumerShippingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConsumer">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/DeleteConsumer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConsumerById">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/DeleteConsumerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerOffers">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/GetConsumerOffers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumerOffer">
+      <soap:operation soapAction="http://tempuri.org/IConsumerService/SaveConsumerOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsumerService">
+    <wsdl:port name="BasicHttpBinding_IConsumerService" binding="tns:BasicHttpBinding_IConsumerService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/eFIN.MVP.Services.Store/urShopper/ConsumerService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

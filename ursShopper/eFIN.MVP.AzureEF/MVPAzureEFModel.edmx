@@ -1,0 +1,864 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ursCoreMVPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="address_id" />
+          </Key>
+          <Property Name="address_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="line_1" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="line_2" Type="varchar" MaxLength="200" />
+          <Property Name="line_3" Type="varchar" MaxLength="200" />
+          <Property Name="city" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="zip_postal_code" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="state_province_county" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="address_create" Type="datetime" Nullable="false" />
+          <Property Name="address_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Consumer">
+          <Key>
+            <PropertyRef Name="consumer_id" />
+          </Key>
+          <Property Name="consumer_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marketer_id" Type="bigint" Nullable="false" />
+          <Property Name="bill_address_id" Type="bigint" Nullable="false" />
+          <Property Name="ship_address_id" Type="bigint" Nullable="false" />
+          <Property Name="consumer_handle" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="consumer_email" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="consumer_fname" Type="varchar" MaxLength="200" />
+          <Property Name="consumer_mname" Type="varchar" MaxLength="200" />
+          <Property Name="consumer_lname" Type="varchar" MaxLength="200" />
+          <Property Name="consumer_phone" Type="varchar" MaxLength="200" />
+          <Property Name="consumer_status" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="consumer_create" Type="datetime" Nullable="false" />
+          <Property Name="consumer_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ConsumerOffer">
+          <Key>
+            <PropertyRef Name="consumeroffer_id" />
+          </Key>
+          <Property Name="consumeroffer_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="consumer_id" Type="bigint" Nullable="false" />
+          <Property Name="marketerproduct_id" Type="bigint" Nullable="false" />
+          <Property Name="consumeroffer_status_id" Type="bigint" Nullable="false" />
+          <Property Name="consumeroffer_date" Type="datetime" Nullable="false" />
+          <Property Name="consumeroffer_qty" Type="int" Nullable="false" />
+          <Property Name="consumeroffer_max_price" Type="money" Nullable="false" />
+          <Property Name="consumeroffer_end_date" Type="datetime" Nullable="false" />
+          <Property Name="consumeroffer_current" Type="bit" Nullable="false" />
+          <Property Name="consumeroffer_create" Type="datetime" Nullable="false" />
+          <Property Name="consumeroffer_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Marketer">
+          <Key>
+            <PropertyRef Name="marketer_id" />
+          </Key>
+          <Property Name="marketer_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marketer_domain" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="marketer_type" Type="varchar" MaxLength="200" />
+          <Property Name="marketer_name" Type="varchar" MaxLength="200" />
+          <Property Name="marketer_create" Type="datetime" Nullable="false" />
+          <Property Name="marketer_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MarketerProduct">
+          <Key>
+            <PropertyRef Name="marketerproduct_id" />
+          </Key>
+          <Property Name="marketerproduct_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marketer_id" Type="bigint" Nullable="false" />
+          <Property Name="product_id" Type="bigint" Nullable="false" />
+          <Property Name="marketerproduct_create" Type="datetime" />
+          <Property Name="marketerproduct_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OfferMatch">
+          <Key>
+            <PropertyRef Name="offermatch_id" />
+          </Key>
+          <Property Name="offermatch_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="consumeroffer_id" Type="bigint" Nullable="false" />
+          <Property Name="supplieroffer_id" Type="bigint" Nullable="false" />
+          <Property Name="offermatch_createdate" Type="datetime" Nullable="false" />
+          <Property Name="offermatch_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OfferStatus">
+          <Key>
+            <PropertyRef Name="offer_status_id" />
+          </Key>
+          <Property Name="offer_status_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="offer_status" Type="varchar" MaxLength="2000" Nullable="false" />
+          <Property Name="offer_status_description" Type="varchar" MaxLength="2000" />
+          <Property Name="offer_status_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_manufacturer" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="product_sku" Type="varchar" MaxLength="200" />
+          <Property Name="product_upc" Type="varchar" MaxLength="200" />
+          <Property Name="product_ean" Type="varchar" MaxLength="200" />
+          <Property Name="product_gtin" Type="varchar" MaxLength="200" />
+          <Property Name="product_name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="product_description" Type="varchar" MaxLength="2000" />
+          <Property Name="product_uom" Type="varchar" MaxLength="200" />
+          <Property Name="product_price" Type="money" Nullable="false" />
+          <Property Name="product_create" Type="datetime" Nullable="false" />
+          <Property Name="product_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="supplier_domain" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="supplier_type" Type="varchar" MaxLength="200" />
+          <Property Name="supplier_name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="supplier_create" Type="datetime" Nullable="false" />
+          <Property Name="supplier_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SupplierOffer">
+          <Key>
+            <PropertyRef Name="supplieroffer_id" />
+          </Key>
+          <Property Name="supplieroffer_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="supplierproduct_id" Type="bigint" Nullable="false" />
+          <Property Name="supplieroffer_incl_price" Type="money" Nullable="false" />
+          <Property Name="supplieroffer_end_date" Type="datetime" Nullable="false" />
+          <Property Name="supplieroffer_create" Type="datetime" Nullable="false" />
+          <Property Name="supplieroffer_timestamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SupplierProduct">
+          <Key>
+            <PropertyRef Name="supplierproduct_id" />
+          </Key>
+          <Property Name="supplierproduct_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="supplier_id" Type="bigint" Nullable="false" />
+          <Property Name="product_id" Type="bigint" Nullable="false" />
+          <Property Name="supplierproduct_create" Type="datetime" />
+          <Property Name="supplierproduct_update" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Bid_User">
+          <End Role="Consumer" Type="Self.Consumer" Multiplicity="1" />
+          <End Role="ConsumerOffer" Type="Self.ConsumerOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consumer">
+              <PropertyRef Name="consumer_id" />
+            </Principal>
+            <Dependent Role="ConsumerOffer">
+              <PropertyRef Name="consumer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BidMatch_Bid">
+          <End Role="ConsumerOffer" Type="Self.ConsumerOffer" Multiplicity="1" />
+          <End Role="OfferMatch" Type="Self.OfferMatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsumerOffer">
+              <PropertyRef Name="consumeroffer_id" />
+            </Principal>
+            <Dependent Role="OfferMatch">
+              <PropertyRef Name="consumeroffer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BidMatch_Offer">
+          <End Role="SupplierOffer" Type="Self.SupplierOffer" Multiplicity="1" />
+          <End Role="OfferMatch" Type="Self.OfferMatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierOffer">
+              <PropertyRef Name="supplieroffer_id" />
+            </Principal>
+            <Dependent Role="OfferMatch">
+              <PropertyRef Name="supplieroffer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_SupplierProduct">
+          <End Role="SupplierProduct" Type="Self.SupplierProduct" Multiplicity="1" />
+          <End Role="SupplierOffer" Type="Self.SupplierOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierProduct">
+              <PropertyRef Name="supplierproduct_id" />
+            </Principal>
+            <Dependent Role="SupplierOffer">
+              <PropertyRef Name="supplierproduct_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RetailerProduct_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="MarketerProduct" Type="Self.MarketerProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="MarketerProduct">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RetailerProduct_Retailer">
+          <End Role="Marketer" Type="Self.Marketer" Multiplicity="1" />
+          <End Role="MarketerProduct" Type="Self.MarketerProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marketer">
+              <PropertyRef Name="marketer_id" />
+            </Principal>
+            <Dependent Role="MarketerProduct">
+              <PropertyRef Name="marketer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierProduct_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="SupplierProduct" Type="Self.SupplierProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="SupplierProduct">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierProduct_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SupplierProduct" Type="Self.SupplierProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="SupplierProduct">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_bill_Address">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="Consumer" Type="Self.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="address_id" />
+            </Principal>
+            <Dependent Role="Consumer">
+              <PropertyRef Name="bill_address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Retailer">
+          <End Role="Marketer" Type="Self.Marketer" Multiplicity="1" />
+          <End Role="Consumer" Type="Self.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marketer">
+              <PropertyRef Name="marketer_id" />
+            </Principal>
+            <Dependent Role="Consumer">
+              <PropertyRef Name="marketer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_ship_Address">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="Consumer" Type="Self.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="address_id" />
+            </Principal>
+            <Dependent Role="Consumer">
+              <PropertyRef Name="ship_address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ursCoreMVPModelStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Consumer" EntityType="Self.Consumer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConsumerOffer" EntityType="Self.ConsumerOffer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marketer" EntityType="Self.Marketer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MarketerProduct" EntityType="Self.MarketerProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfferMatch" EntityType="Self.OfferMatch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfferStatus" EntityType="Self.OfferStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplierOffer" EntityType="Self.SupplierOffer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplierProduct" EntityType="Self.SupplierProduct" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bid_User" Association="Self.FK_Bid_User">
+            <End Role="Consumer" EntitySet="Consumer" />
+            <End Role="ConsumerOffer" EntitySet="ConsumerOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BidMatch_Bid" Association="Self.FK_BidMatch_Bid">
+            <End Role="ConsumerOffer" EntitySet="ConsumerOffer" />
+            <End Role="OfferMatch" EntitySet="OfferMatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BidMatch_Offer" Association="Self.FK_BidMatch_Offer">
+            <End Role="SupplierOffer" EntitySet="SupplierOffer" />
+            <End Role="OfferMatch" EntitySet="OfferMatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_SupplierProduct" Association="Self.FK_Offer_SupplierProduct">
+            <End Role="SupplierProduct" EntitySet="SupplierProduct" />
+            <End Role="SupplierOffer" EntitySet="SupplierOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RetailerProduct_Product" Association="Self.FK_RetailerProduct_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="MarketerProduct" EntitySet="MarketerProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RetailerProduct_Retailer" Association="Self.FK_RetailerProduct_Retailer">
+            <End Role="Marketer" EntitySet="Marketer" />
+            <End Role="MarketerProduct" EntitySet="MarketerProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierProduct_Product" Association="Self.FK_SupplierProduct_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="SupplierProduct" EntitySet="SupplierProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierProduct_Supplier" Association="Self.FK_SupplierProduct_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="SupplierProduct" EntitySet="SupplierProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_bill_Address" Association="Self.FK_User_bill_Address">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Consumer" EntitySet="Consumer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Retailer" Association="Self.FK_User_Retailer">
+            <End Role="Marketer" EntitySet="Marketer" />
+            <End Role="Consumer" EntitySet="Consumer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_ship_Address" Association="Self.FK_User_ship_Address">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Consumer" EntitySet="Consumer" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ursCoreMVPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AddressEntity">
+          <Key>
+            <PropertyRef Name="address_id" />
+          </Key>
+          <Property Name="address_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="line_1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="line_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="line_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="zip_postal_code" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state_province_county" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address_create" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="address_update" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ConsumerEntity">
+          <Key>
+            <PropertyRef Name="consumer_id" />
+          </Key>
+          <Property Name="consumer_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="marketer_id" Type="Int64" Nullable="false" />
+          <Property Name="bill_address_id" Type="Int64" Nullable="false" />
+          <Property Name="ship_address_id" Type="Int64" Nullable="false" />
+          <Property Name="consumer_handle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="consumer_email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="consumer_fname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_mname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_lname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_phone" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="consumer_create" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="consumer_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BillingAddress" Relationship="Self.FK_User_bill_Address" FromRole="Consumer" ToRole="Address" />
+          <NavigationProperty Name="ShippingAddress" Relationship="Self.FK_User_ship_Address" FromRole="Consumer" ToRole="Address" />
+          <NavigationProperty Name="ConsumerOffers" Relationship="Self.FK_Bid_User" FromRole="Consumer" ToRole="ConsumerOffer" />
+          <NavigationProperty Name="Marketer" Relationship="Self.FK_User_Retailer" FromRole="Consumer" ToRole="Marketer" />
+        </EntityType>
+        <EntityType Name="ConsumerOfferEntity">
+          <Key>
+            <PropertyRef Name="consumeroffer_id" />
+          </Key>
+          <Property Name="consumeroffer_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="consumer_id" Type="Int64" Nullable="false" />
+          <Property Name="marketerproduct_id" Type="Int64" Nullable="false" />
+          <Property Name="consumeroffer_status_id" Type="Int64" Nullable="false" />
+          <Property Name="consumeroffer_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="consumeroffer_qty" Type="Int32" Nullable="false" />
+          <Property Name="consumeroffer_max_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="consumeroffer_end_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="consumeroffer_current" Type="Boolean" Nullable="false" />
+          <Property Name="consumeroffer_create" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="consumeroffer_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Consumer" Relationship="Self.FK_Bid_User" FromRole="ConsumerOffer" ToRole="Consumer" />
+          <NavigationProperty Name="OfferMatches" Relationship="Self.FK_BidMatch_Bid" FromRole="ConsumerOffer" ToRole="OfferMatch" />
+        </EntityType>
+        <EntityType Name="MarketerEntity">
+          <Key>
+            <PropertyRef Name="marketer_id" />
+          </Key>
+          <Property Name="marketer_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="marketer_domain" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="marketer_type" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="marketer_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="marketer_create" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="marketer_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Consumers" Relationship="Self.FK_User_Retailer" FromRole="Marketer" ToRole="Consumer" />
+          <NavigationProperty Name="MarketerProducts" Relationship="Self.FK_RetailerProduct_Retailer" FromRole="Marketer" ToRole="MarketerProduct" />
+        </EntityType>
+        <EntityType Name="MarketerProductEntity">
+          <Key>
+            <PropertyRef Name="marketerproduct_id" />
+          </Key>
+          <Property Name="marketerproduct_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="marketer_id" Type="Int64" Nullable="false" />
+          <Property Name="product_id" Type="Int64" Nullable="false" />
+          <Property Name="marketerproduct_create" Type="DateTime" Precision="3" />
+          <Property Name="marketerproduct_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Marketer" Relationship="Self.FK_RetailerProduct_Retailer" FromRole="MarketerProduct" ToRole="Marketer" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_RetailerProduct_Product" FromRole="MarketerProduct" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="OfferMatchEntity">
+          <Key>
+            <PropertyRef Name="offermatch_id" />
+          </Key>
+          <Property Name="offermatch_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="consumeroffer_id" Type="Int64" Nullable="false" />
+          <Property Name="supplieroffer_id" Type="Int64" Nullable="false" />
+          <Property Name="offermatch_createdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="offermatch_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ConsumerOffer" Relationship="Self.FK_BidMatch_Bid" FromRole="OfferMatch" ToRole="ConsumerOffer" />
+          <NavigationProperty Name="SupplierOffer" Relationship="Self.FK_BidMatch_Offer" FromRole="OfferMatch" ToRole="SupplierOffer" />
+        </EntityType>
+        <EntityType Name="OfferStatusEntity">
+          <Key>
+            <PropertyRef Name="offer_status_id" />
+          </Key>
+          <Property Name="offer_status_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="offer_status" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="offer_status_description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="offer_status_update" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ProductEntity">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_manufacturer" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_sku" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="product_upc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="product_ean" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="product_gtin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="product_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="product_uom" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="product_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="product_create" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="product_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MarketerProducts" Relationship="Self.FK_RetailerProduct_Product" FromRole="Product" ToRole="MarketerProduct" />
+          <NavigationProperty Name="SupplierProducts" Relationship="Self.FK_SupplierProduct_Product" FromRole="Product" ToRole="SupplierProduct" />
+        </EntityType>
+        <EntityType Name="SupplierEntity">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="supplier_domain" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="supplier_type" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="supplier_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="supplier_create" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="supplier_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SupplierProducts" Relationship="Self.FK_SupplierProduct_Supplier" FromRole="Supplier" ToRole="SupplierProduct" />
+        </EntityType>
+        <EntityType Name="SupplierOfferEntity">
+          <Key>
+            <PropertyRef Name="supplieroffer_id" />
+          </Key>
+          <Property Name="supplieroffer_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="supplierproduct_id" Type="Int64" Nullable="false" />
+          <Property Name="supplieroffer_incl_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="supplieroffer_end_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="supplieroffer_create" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="supplieroffer_timestamp" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OfferMatches" Relationship="Self.FK_BidMatch_Offer" FromRole="SupplierOffer" ToRole="OfferMatch" />
+          <NavigationProperty Name="SupplierProduct" Relationship="Self.FK_Offer_SupplierProduct" FromRole="SupplierOffer" ToRole="SupplierProduct" />
+        </EntityType>
+        <EntityType Name="SupplierProductEntity">
+          <Key>
+            <PropertyRef Name="supplierproduct_id" />
+          </Key>
+          <Property Name="supplierproduct_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="supplier_id" Type="Int64" Nullable="false" />
+          <Property Name="product_id" Type="Int64" Nullable="false" />
+          <Property Name="supplierproduct_create" Type="DateTime" Precision="3" />
+          <Property Name="supplierproduct_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_SupplierProduct_Product" FromRole="SupplierProduct" ToRole="Product" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SupplierProduct_Supplier" FromRole="SupplierProduct" ToRole="Supplier" />
+          <NavigationProperty Name="SupplierOffers" Relationship="Self.FK_Offer_SupplierProduct" FromRole="SupplierProduct" ToRole="SupplierOffer" />
+        </EntityType>
+        <Association Name="FK_User_bill_Address">
+          <End Role="Address" Type="ursCoreMVPModel.AddressEntity" Multiplicity="1" />
+          <End Role="Consumer" Type="ursCoreMVPModel.ConsumerEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="address_id" />
+            </Principal>
+            <Dependent Role="Consumer">
+              <PropertyRef Name="bill_address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_ship_Address">
+          <End Role="Address" Type="ursCoreMVPModel.AddressEntity" Multiplicity="1" />
+          <End Role="Consumer" Type="ursCoreMVPModel.ConsumerEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="address_id" />
+            </Principal>
+            <Dependent Role="Consumer">
+              <PropertyRef Name="ship_address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bid_User">
+          <End Role="Consumer" Type="ursCoreMVPModel.ConsumerEntity" Multiplicity="1" />
+          <End Role="ConsumerOffer" Type="ursCoreMVPModel.ConsumerOfferEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consumer">
+              <PropertyRef Name="consumer_id" />
+            </Principal>
+            <Dependent Role="ConsumerOffer">
+              <PropertyRef Name="consumer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Retailer">
+          <End Role="Marketer" Type="ursCoreMVPModel.MarketerEntity" Multiplicity="1" />
+          <End Role="Consumer" Type="ursCoreMVPModel.ConsumerEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marketer">
+              <PropertyRef Name="marketer_id" />
+            </Principal>
+            <Dependent Role="Consumer">
+              <PropertyRef Name="marketer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BidMatch_Bid">
+          <End Role="ConsumerOffer" Type="ursCoreMVPModel.ConsumerOfferEntity" Multiplicity="1" />
+          <End Role="OfferMatch" Type="ursCoreMVPModel.OfferMatchEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsumerOffer">
+              <PropertyRef Name="consumeroffer_id" />
+            </Principal>
+            <Dependent Role="OfferMatch">
+              <PropertyRef Name="consumeroffer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RetailerProduct_Retailer">
+          <End Role="Marketer" Type="ursCoreMVPModel.MarketerEntity" Multiplicity="1" />
+          <End Role="MarketerProduct" Type="ursCoreMVPModel.MarketerProductEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marketer">
+              <PropertyRef Name="marketer_id" />
+            </Principal>
+            <Dependent Role="MarketerProduct">
+              <PropertyRef Name="marketer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RetailerProduct_Product">
+          <End Role="Product" Type="ursCoreMVPModel.ProductEntity" Multiplicity="1" />
+          <End Role="MarketerProduct" Type="ursCoreMVPModel.MarketerProductEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="MarketerProduct">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BidMatch_Offer">
+          <End Role="SupplierOffer" Type="ursCoreMVPModel.SupplierOfferEntity" Multiplicity="1" />
+          <End Role="OfferMatch" Type="ursCoreMVPModel.OfferMatchEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierOffer">
+              <PropertyRef Name="supplieroffer_id" />
+            </Principal>
+            <Dependent Role="OfferMatch">
+              <PropertyRef Name="supplieroffer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierProduct_Product">
+          <End Role="Product" Type="ursCoreMVPModel.ProductEntity" Multiplicity="1" />
+          <End Role="SupplierProduct" Type="ursCoreMVPModel.SupplierProductEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="SupplierProduct">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierProduct_Supplier">
+          <End Role="Supplier" Type="ursCoreMVPModel.SupplierEntity" Multiplicity="1" />
+          <End Role="SupplierProduct" Type="ursCoreMVPModel.SupplierProductEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="SupplierProduct">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_SupplierProduct">
+          <End Role="SupplierProduct" Type="ursCoreMVPModel.SupplierProductEntity" Multiplicity="1" />
+          <End Role="SupplierOffer" Type="ursCoreMVPModel.SupplierOfferEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierProduct">
+              <PropertyRef Name="supplierproduct_id" />
+            </Principal>
+            <Dependent Role="SupplierOffer">
+              <PropertyRef Name="supplierproduct_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ursCoreMVPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddressEntities" EntityType="ursCoreMVPModel.AddressEntity" />
+          <EntitySet Name="ConsumerEntities" EntityType="ursCoreMVPModel.ConsumerEntity" />
+          <EntitySet Name="ConsumerOfferEntities" EntityType="ursCoreMVPModel.ConsumerOfferEntity" />
+          <EntitySet Name="MarketerEntities" EntityType="ursCoreMVPModel.MarketerEntity" />
+          <EntitySet Name="MarketerProductEntities" EntityType="ursCoreMVPModel.MarketerProductEntity" />
+          <EntitySet Name="OfferMatchEntities" EntityType="ursCoreMVPModel.OfferMatchEntity" />
+          <EntitySet Name="OfferStatusEntities" EntityType="ursCoreMVPModel.OfferStatusEntity" />
+          <EntitySet Name="ProductEntities" EntityType="ursCoreMVPModel.ProductEntity" />
+          <EntitySet Name="SupplierEntities" EntityType="ursCoreMVPModel.SupplierEntity" />
+          <EntitySet Name="SupplierOfferEntities" EntityType="ursCoreMVPModel.SupplierOfferEntity" />
+          <EntitySet Name="SupplierProductEntities" EntityType="ursCoreMVPModel.SupplierProductEntity" />
+          <AssociationSet Name="FK_User_bill_Address" Association="Self.FK_User_bill_Address">
+            <End Role="Address" EntitySet="AddressEntities" />
+            <End Role="Consumer" EntitySet="ConsumerEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_ship_Address" Association="Self.FK_User_ship_Address">
+            <End Role="Address" EntitySet="AddressEntities" />
+            <End Role="Consumer" EntitySet="ConsumerEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bid_User" Association="Self.FK_Bid_User">
+            <End Role="Consumer" EntitySet="ConsumerEntities" />
+            <End Role="ConsumerOffer" EntitySet="ConsumerOfferEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Retailer" Association="Self.FK_User_Retailer">
+            <End Role="Marketer" EntitySet="MarketerEntities" />
+            <End Role="Consumer" EntitySet="ConsumerEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BidMatch_Bid" Association="Self.FK_BidMatch_Bid">
+            <End Role="ConsumerOffer" EntitySet="ConsumerOfferEntities" />
+            <End Role="OfferMatch" EntitySet="OfferMatchEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RetailerProduct_Retailer" Association="Self.FK_RetailerProduct_Retailer">
+            <End Role="Marketer" EntitySet="MarketerEntities" />
+            <End Role="MarketerProduct" EntitySet="MarketerProductEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RetailerProduct_Product" Association="Self.FK_RetailerProduct_Product">
+            <End Role="Product" EntitySet="ProductEntities" />
+            <End Role="MarketerProduct" EntitySet="MarketerProductEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BidMatch_Offer" Association="Self.FK_BidMatch_Offer">
+            <End Role="SupplierOffer" EntitySet="SupplierOfferEntities" />
+            <End Role="OfferMatch" EntitySet="OfferMatchEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierProduct_Product" Association="Self.FK_SupplierProduct_Product">
+            <End Role="Product" EntitySet="ProductEntities" />
+            <End Role="SupplierProduct" EntitySet="SupplierProductEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierProduct_Supplier" Association="Self.FK_SupplierProduct_Supplier">
+            <End Role="Supplier" EntitySet="SupplierEntities" />
+            <End Role="SupplierProduct" EntitySet="SupplierProductEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_SupplierProduct" Association="Self.FK_Offer_SupplierProduct">
+            <End Role="SupplierProduct" EntitySet="SupplierProductEntities" />
+            <End Role="SupplierOffer" EntitySet="SupplierOfferEntities" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ursCoreMVPModelStoreContainer" CdmEntityContainer="ursCoreMVPEntities">
+          <EntitySetMapping Name="AddressEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.AddressEntity">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="address_id" ColumnName="address_id" />
+                <ScalarProperty Name="line_1" ColumnName="line_1" />
+                <ScalarProperty Name="line_2" ColumnName="line_2" />
+                <ScalarProperty Name="line_3" ColumnName="line_3" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="zip_postal_code" ColumnName="zip_postal_code" />
+                <ScalarProperty Name="state_province_county" ColumnName="state_province_county" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="address_create" ColumnName="address_create" />
+                <ScalarProperty Name="address_update" ColumnName="address_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsumerEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.ConsumerEntity">
+              <MappingFragment StoreEntitySet="Consumer">
+                <ScalarProperty Name="consumer_id" ColumnName="consumer_id" />
+                <ScalarProperty Name="marketer_id" ColumnName="marketer_id" />
+                <ScalarProperty Name="bill_address_id" ColumnName="bill_address_id" />
+                <ScalarProperty Name="ship_address_id" ColumnName="ship_address_id" />
+                <ScalarProperty Name="consumer_handle" ColumnName="consumer_handle" />
+                <ScalarProperty Name="consumer_email" ColumnName="consumer_email" />
+                <ScalarProperty Name="consumer_fname" ColumnName="consumer_fname" />
+                <ScalarProperty Name="consumer_mname" ColumnName="consumer_mname" />
+                <ScalarProperty Name="consumer_lname" ColumnName="consumer_lname" />
+                <ScalarProperty Name="consumer_phone" ColumnName="consumer_phone" />
+                <ScalarProperty Name="consumer_status" ColumnName="consumer_status" />
+                <ScalarProperty Name="consumer_create" ColumnName="consumer_create" />
+                <ScalarProperty Name="consumer_update" ColumnName="consumer_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsumerOfferEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.ConsumerOfferEntity">
+              <MappingFragment StoreEntitySet="ConsumerOffer">
+                <ScalarProperty Name="consumeroffer_id" ColumnName="consumeroffer_id" />
+                <ScalarProperty Name="consumer_id" ColumnName="consumer_id" />
+                <ScalarProperty Name="marketerproduct_id" ColumnName="marketerproduct_id" />
+                <ScalarProperty Name="consumeroffer_status_id" ColumnName="consumeroffer_status_id" />
+                <ScalarProperty Name="consumeroffer_date" ColumnName="consumeroffer_date" />
+                <ScalarProperty Name="consumeroffer_qty" ColumnName="consumeroffer_qty" />
+                <ScalarProperty Name="consumeroffer_max_price" ColumnName="consumeroffer_max_price" />
+                <ScalarProperty Name="consumeroffer_end_date" ColumnName="consumeroffer_end_date" />
+                <ScalarProperty Name="consumeroffer_current" ColumnName="consumeroffer_current" />
+                <ScalarProperty Name="consumeroffer_create" ColumnName="consumeroffer_create" />
+                <ScalarProperty Name="consumeroffer_update" ColumnName="consumeroffer_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarketerEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.MarketerEntity">
+              <MappingFragment StoreEntitySet="Marketer">
+                <ScalarProperty Name="marketer_id" ColumnName="marketer_id" />
+                <ScalarProperty Name="marketer_domain" ColumnName="marketer_domain" />
+                <ScalarProperty Name="marketer_type" ColumnName="marketer_type" />
+                <ScalarProperty Name="marketer_name" ColumnName="marketer_name" />
+                <ScalarProperty Name="marketer_create" ColumnName="marketer_create" />
+                <ScalarProperty Name="marketer_update" ColumnName="marketer_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarketerProductEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.MarketerProductEntity">
+              <MappingFragment StoreEntitySet="MarketerProduct">
+                <ScalarProperty Name="marketerproduct_id" ColumnName="marketerproduct_id" />
+                <ScalarProperty Name="marketer_id" ColumnName="marketer_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="marketerproduct_create" ColumnName="marketerproduct_create" />
+                <ScalarProperty Name="marketerproduct_update" ColumnName="marketerproduct_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfferMatchEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.OfferMatchEntity">
+              <MappingFragment StoreEntitySet="OfferMatch">
+                <ScalarProperty Name="offermatch_id" ColumnName="offermatch_id" />
+                <ScalarProperty Name="consumeroffer_id" ColumnName="consumeroffer_id" />
+                <ScalarProperty Name="supplieroffer_id" ColumnName="supplieroffer_id" />
+                <ScalarProperty Name="offermatch_createdate" ColumnName="offermatch_createdate" />
+                <ScalarProperty Name="offermatch_update" ColumnName="offermatch_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfferStatusEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.OfferStatusEntity">
+              <MappingFragment StoreEntitySet="OfferStatus">
+                <ScalarProperty Name="offer_status_id" ColumnName="offer_status_id" />
+                <ScalarProperty Name="offer_status" ColumnName="offer_status" />
+                <ScalarProperty Name="offer_status_description" ColumnName="offer_status_description" />
+                <ScalarProperty Name="offer_status_update" ColumnName="offer_status_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.ProductEntity">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_manufacturer" ColumnName="product_manufacturer" />
+                <ScalarProperty Name="product_sku" ColumnName="product_sku" />
+                <ScalarProperty Name="product_upc" ColumnName="product_upc" />
+                <ScalarProperty Name="product_ean" ColumnName="product_ean" />
+                <ScalarProperty Name="product_gtin" ColumnName="product_gtin" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_description" ColumnName="product_description" />
+                <ScalarProperty Name="product_uom" ColumnName="product_uom" />
+                <ScalarProperty Name="product_price" ColumnName="product_price" />
+                <ScalarProperty Name="product_create" ColumnName="product_create" />
+                <ScalarProperty Name="product_update" ColumnName="product_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplierEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.SupplierEntity">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="supplier_domain" ColumnName="supplier_domain" />
+                <ScalarProperty Name="supplier_type" ColumnName="supplier_type" />
+                <ScalarProperty Name="supplier_name" ColumnName="supplier_name" />
+                <ScalarProperty Name="supplier_create" ColumnName="supplier_create" />
+                <ScalarProperty Name="supplier_update" ColumnName="supplier_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplierOfferEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.SupplierOfferEntity">
+              <MappingFragment StoreEntitySet="SupplierOffer">
+                <ScalarProperty Name="supplieroffer_id" ColumnName="supplieroffer_id" />
+                <ScalarProperty Name="supplierproduct_id" ColumnName="supplierproduct_id" />
+                <ScalarProperty Name="supplieroffer_incl_price" ColumnName="supplieroffer_incl_price" />
+                <ScalarProperty Name="supplieroffer_end_date" ColumnName="supplieroffer_end_date" />
+                <ScalarProperty Name="supplieroffer_create" ColumnName="supplieroffer_create" />
+                <ScalarProperty Name="supplieroffer_timestamp" ColumnName="supplieroffer_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplierProductEntities">
+            <EntityTypeMapping TypeName="ursCoreMVPModel.SupplierProductEntity">
+              <MappingFragment StoreEntitySet="SupplierProduct">
+                <ScalarProperty Name="supplierproduct_id" ColumnName="supplierproduct_id" />
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="supplierproduct_create" ColumnName="supplierproduct_create" />
+                <ScalarProperty Name="supplierproduct_update" ColumnName="supplierproduct_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

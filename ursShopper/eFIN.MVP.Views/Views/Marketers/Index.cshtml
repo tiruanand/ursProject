@@ -1,0 +1,86 @@
+﻿@model IEnumerable<eFIN.MVP.AzureEF.MarketerEntity>
+
+@{
+    ViewBag.Title = "Marketers";
+}
+@section scripts{
+    <script src="~/Scripts/ClientJS/MarketerCJS.js"></script>
+    <script src="~/Scripts/ServerJS/MarketerSJS.js"></script>
+}
+<h2>Marketers</h2>
+<p>
+    @Html.ActionLink("Create New Marketer", "Create")
+</p>
+<div ng-app="MarketerApp" class="container">
+    <div ng-controller="MarketersController" id="mainContent">
+        <table class="mainTable" width="100%">
+            <tr>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.marketer_name)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.marketer_domain)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.marketer_type)
+                </th>
+            </tr>
+            <tr ng-repeat="r in Marketers">
+                <td colspan="3">
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                        <tr id="mainDataRow">
+                            <td class="mainTDData">
+                                {{r.Name}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.Domain}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.Type}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" ng-init="getMarketerProducts(r)">
+                                <div ng-show="r.Products.length" ng-repeat="sp in r.Products">
+                                    <div class="col-sm-3" id="rcornersDiv">
+                                        <table class="productTable">
+                                            <tr>
+                                                <td>Product {{sp.Product}}</td>
+                                                <td>{{sp.Product.Name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SKU</td>
+                                                <td>{{sp.Product.Sku}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Manufacturer</td>
+                                                <td>{{sp.Product.Manufacturer}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Description</td>
+                                                <td>{{sp.Product.Description}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Price</td>
+                                                <td>{{sp.Product.Price | currency}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                @*View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.*@
+
+                                @*<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>*@
+
+                                <div ng-show="r.Products.length==0">
+                                    <span class="noDetails">
+                                        No products avaialble now.
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

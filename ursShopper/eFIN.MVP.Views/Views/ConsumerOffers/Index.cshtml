@@ -1,0 +1,87 @@
+﻿@model IEnumerable<eFIN.MVP.Views.Models.AzureDataModels.ConsumerOfferEntity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.marketerproduct_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumeroffer_status_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumeroffer_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumeroffer_qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumeroffer_max_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumeroffer_end_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumeroffer_current)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumeroffer_create)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumeroffer_update)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsumerEntity.consumer_handle)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.marketerproduct_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.consumeroffer_status_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.consumeroffer_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.consumeroffer_qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.consumeroffer_max_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.consumeroffer_end_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.consumeroffer_current)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.consumeroffer_create)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.consumeroffer_update)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConsumerEntity.consumer_handle)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.consumeroffer_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.consumeroffer_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.consumeroffer_id })
+        </td>
+    </tr>
+}
+
+</table>

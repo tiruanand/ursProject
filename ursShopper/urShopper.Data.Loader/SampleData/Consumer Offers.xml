@@ -1,0 +1,21 @@
+﻿<ConsumerOffers xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <ConsumerOffer>
+    <OfferedConsumer>
+      <ConsumerHandle>MTIsaac</ConsumerHandle>
+      <Marketer>
+        <Name>Realcube</Name>
+      </Marketer>
+     </OfferedConsumer>
+    <Offers>
+      <Offer>
+        <OfferedProduct>
+          <SKU>CDSRCAN00032D</SKU>
+        </OfferedProduct>
+        <OfferDate>2016-07-15T23:59:00</OfferDate>
+        <Quantity>1</Quantity>
+        <MaxPrice>425.00</MaxPrice>
+        <EndDate>2016-07-18T23:59:00</EndDate>
+      </Offer>
+    </Offers>
+  </ConsumerOffer>
+</ConsumerOffers>

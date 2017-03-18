@@ -1,0 +1,93 @@
+﻿@model IEnumerable<eFIN.MVP.Views.Models.AzureDataModels.ProductEntity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.product_manufacturer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_sku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_upc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_ean)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_gtin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_uom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_create)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_update)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_manufacturer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_sku)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_upc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_ean)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_gtin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_uom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_create)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_update)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.product_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.product_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.product_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,13 @@
+﻿<Products xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Product>
+    <Description>Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.</Description>
+    <EAN i:nil="true" />
+    <GTIN i:nil="true" />
+    <Manufacturer>Thoughtstorm</Manufacturer>
+    <Name>nulla</Name>
+    <Price>181.2100</Price>
+    <SKU>ozMpysz29g</SKU>
+    <UOM>risus</UOM>
+    <UPC i:nil="true" />
+  </Product>
+</Products>

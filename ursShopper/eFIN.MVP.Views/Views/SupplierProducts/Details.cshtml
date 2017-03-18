@@ -1,0 +1,50 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.SupplierProductEntity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SupplierProductEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierEntity.supplier_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierEntity.supplier_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductEntity.product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductEntity.product_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplierproduct_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplierproduct_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplierproduct_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplierproduct_update)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.supplierproduct_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

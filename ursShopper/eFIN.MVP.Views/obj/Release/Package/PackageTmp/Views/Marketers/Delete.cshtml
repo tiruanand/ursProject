@@ -1,0 +1,64 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.MarketerEntity
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MarketerEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.marketer_domain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marketer_domain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marketer_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marketer_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marketer_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marketer_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marketer_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marketer_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marketer_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marketer_update)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

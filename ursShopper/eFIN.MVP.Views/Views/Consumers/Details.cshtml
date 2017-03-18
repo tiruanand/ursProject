@@ -1,0 +1,114 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.ConsumerEntity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ConsumerEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_handle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_handle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_mname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_mname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_update)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.line_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.line_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1.line_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1.line_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarketerEntity.marketer_domain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarketerEntity.marketer_domain)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.consumer_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

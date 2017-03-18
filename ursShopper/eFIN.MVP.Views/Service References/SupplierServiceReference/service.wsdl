@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SupplierService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISupplierService_GetSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplierId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierId" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplierId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetAllSuppliers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetAllSuppliers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetAllSuppliersList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSuppliersList" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetAllSuppliersList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSuppliersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_SaveSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_SaveSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_DeleteSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_DeleteSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_DeleteSupplierById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplierById" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_DeleteSupplierById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplierByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_SaveSupplierProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSupplierProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_SaveSupplierProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSupplierProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_AddProductToSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_AddProductToSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_RemoveProductFromSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_RemoveProductFromSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplierProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplierProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplierProductId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierProductId" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplierProductId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierProductIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplierProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierProducts" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSupplierProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetProductSuppliers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetProductSuppliers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISupplierService">
+    <wsdl:operation name="GetSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetSupplier" message="tns:ISupplierService_GetSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierResponse" message="tns:ISupplierService_GetSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierId" message="tns:ISupplierService_GetSupplierId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierIdResponse" message="tns:ISupplierService_GetSupplierId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSuppliers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetAllSuppliers" message="tns:ISupplierService_GetAllSuppliers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetAllSuppliersResponse" message="tns:ISupplierService_GetAllSuppliers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSuppliersList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetAllSuppliersList" message="tns:ISupplierService_GetAllSuppliersList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetAllSuppliersListResponse" message="tns:ISupplierService_GetAllSuppliersList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/SaveSupplier" message="tns:ISupplierService_SaveSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/SaveSupplierResponse" message="tns:ISupplierService_SaveSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/DeleteSupplier" message="tns:ISupplierService_DeleteSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/DeleteSupplierResponse" message="tns:ISupplierService_DeleteSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplierById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/DeleteSupplierById" message="tns:ISupplierService_DeleteSupplierById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/DeleteSupplierByIdResponse" message="tns:ISupplierService_DeleteSupplierById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupplierProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/SaveSupplierProduct" message="tns:ISupplierService_SaveSupplierProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/SaveSupplierProductResponse" message="tns:ISupplierService_SaveSupplierProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/AddProductToSupplier" message="tns:ISupplierService_AddProductToSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/AddProductToSupplierResponse" message="tns:ISupplierService_AddProductToSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductFromSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/RemoveProductFromSupplier" message="tns:ISupplierService_RemoveProductFromSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/RemoveProductFromSupplierResponse" message="tns:ISupplierService_RemoveProductFromSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierProduct" message="tns:ISupplierService_GetSupplierProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierProductResponse" message="tns:ISupplierService_GetSupplierProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProductId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierProductId" message="tns:ISupplierService_GetSupplierProductId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierProductIdResponse" message="tns:ISupplierService_GetSupplierProductId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierProducts" message="tns:ISupplierService_GetSupplierProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetSupplierProductsResponse" message="tns:ISupplierService_GetSupplierProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductSuppliers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetProductSuppliers" message="tns:ISupplierService_GetProductSuppliers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetProductSuppliersResponse" message="tns:ISupplierService_GetProductSuppliers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISupplierService" type="tns:ISupplierService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierId">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetSupplierId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSuppliers">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetAllSuppliers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSuppliersList">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetAllSuppliersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/SaveSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/DeleteSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplierById">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/DeleteSupplierById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupplierProduct">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/SaveSupplierProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/AddProductToSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductFromSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/RemoveProductFromSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProduct">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetSupplierProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProductId">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetSupplierProductId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierProducts">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetSupplierProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductSuppliers">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetProductSuppliers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SupplierService">
+    <wsdl:port name="BasicHttpBinding_ISupplierService" binding="tns:BasicHttpBinding_ISupplierService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/eFIN.MVP.Services.Store/urShopper/SupplierService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

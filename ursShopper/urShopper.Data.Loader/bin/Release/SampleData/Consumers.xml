@@ -1,0 +1,32 @@
+﻿<Consumers xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Consumer>
+    <ConsumerHandle>MTIsaac</ConsumerHandle>
+    <ConsumerEmail>michael.isaac@conclusn.com</ConsumerEmail>
+    <ConsumerFName>Michael</ConsumerFName>
+    <ConsumerLName>Isaac</ConsumerLName>
+    <ConsumerMName />
+    <ConsumerPhone>9523148337</ConsumerPhone>
+    <ConsumerStatus>1</ConsumerStatus>
+    <Marketer>
+      <Domain>kickstarter.com</Domain>
+      <Name>Realcube</Name>
+      <Type>Aggregator</Type>
+    </Marketer>
+    <ShipAddress i:nil="true" />
+    <BillAddress i:nil="true" />
+  </Consumer>
+  <Consumer>
+    <ConsumerEmail>mweaver7@cnet.com</ConsumerEmail>
+    <ConsumerFName>Lawrence</ConsumerFName>
+    <ConsumerHandle>mweaver7</ConsumerHandle>
+    <ConsumerLName>Weaver</ConsumerLName>
+    <ConsumerMName>Maria</ConsumerMName>
+    <ConsumerPhone>86-(293)479-6297</ConsumerPhone>
+    <ConsumerStatus>1</ConsumerStatus>
+    <Marketer>
+      <Domain>patch.com</Domain>
+      <Name>Roombo</Name>
+      <Type>Aggregator</Type>
+    </Marketer>
+  </Consumer>
+</Consumers>

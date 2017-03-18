@@ -1,0 +1,12 @@
+﻿<Suppliers xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Supplier>
+    <Domain>nasa.gov</Domain>
+    <Name>Dablist</Name>
+    <Type>Online Retailer</Type>
+  </Supplier>
+  <Supplier>
+    <Domain>a8.net</Domain>
+    <Name>Gabcube</Name>
+    <Type>Online Retailer</Type>
+  </Supplier>
+</Suppliers>

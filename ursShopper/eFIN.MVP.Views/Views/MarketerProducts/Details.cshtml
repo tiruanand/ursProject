@@ -1,0 +1,52 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.MarketerProductEntity
+
+@{
+    ViewBag.Title = "Marketer ProductEntity Details";
+}
+
+<h2>MarketerEntity ProductEntity Details</h2>
+
+<div>
+    <h4>MarketerEntity ProductEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarketerEntity.marketer_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarketerEntity.marketer_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductEntity.product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductEntity.product_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.marketerproduct_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marketerproduct_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marketerproduct_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marketerproduct_update)
+        </dd>
+
+
+    </dl>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.marketerproduct_id }) |
+    @Html.ActionLink("Back to MarketerEntity ProductEntities", "Index")
+</p>

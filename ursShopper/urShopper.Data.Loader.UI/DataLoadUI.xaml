@@ -1,0 +1,38 @@
+﻿<Window x:Class="urShopper.Data.Loader.UI.DataLoadUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:urShopper.Data.Loader.UI"
+        mc:Ignorable="d" FontFamily="Arial" FontSize="10"
+        Title="urShopper Data Loader" Height="600" Width="925">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="4" Content="urShopper Data Loader Tool" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Foreground="SteelBlue" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Input Data" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+        <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" MinWidth="200" Name="cbxServices" SelectionChanged="cbxServices_SelectionChanged" >
+            <ComboBoxItem Content="Consumers"/>
+            <ComboBoxItem Content="Marketers"/>
+            <ComboBoxItem Content="Products"/>
+            <ComboBoxItem Content="Suppliers"/>
+            <ComboBoxItem Content="Consumer Offers"/>
+            <ComboBoxItem Content="Supplier Offers"/>
+        </ComboBox>
+        <Label Grid.Row="1" Grid.Column="2" Content="Output Data" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+        <TextBox x:Name="txtInput" IsEnabled="True" IsReadOnly="False" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="2" BorderThickness="1" Height="380" Width="450" TextWrapping="Wrap" AcceptsReturn="True" />
+        <TextBox x:Name="txtOutput" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="2" BorderThickness="1" Height="380" Width="450" TextWrapping="Wrap" AcceptsReturn="True" />
+        <Button x:Name="btnSample" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Show Sample Data" Width="120" Height="25" Click="btnSample_Click"/>
+        <Button x:Name="btnLoad" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Start Loading" Width="100" Height="25" Click="btnLoad_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Supplier Offers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Consumer Offers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Products.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Marketers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Suppliers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Consumers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\urShopper.Data.Loader.dll.config
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\urShopper.Data.Loader.dll
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\urShopper.Data.Loader.pdb
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\EntityFramework.dll
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\EntityFramework.SqlServer.dll
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\EntityFramework.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Release\EntityFramework.SqlServer.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\obj\Release\urShopper.Data.Loader.dll
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\obj\Release\urShopper.Data.Loader.pdb
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Supplier Offers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Consumer Offers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Products.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Marketers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Suppliers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\SampleData\Consumers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\urShopper.Data.Loader.dll.config
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\urShopper.Data.Loader.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\urShopper.Data.Loader.pdb
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\EntityFramework.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\EntityFramework.SqlServer.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\EntityFramework.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Release\EntityFramework.SqlServer.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\obj\Release\urShopper.Data.Loader.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\obj\Release\urShopper.Data.Loader.pdb

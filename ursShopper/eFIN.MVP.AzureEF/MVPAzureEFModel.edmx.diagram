@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3a47b7b88a9d45839a94bbb9a54bf7a7" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="ursCoreMVPModel.AddressEntity" Width="2.375" PointX="5.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.ConsumerEntity" Width="2.125" PointX="3.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.ConsumerOfferEntity" Width="2.875" PointX="1.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.MarketerEntity" Width="2.125" PointX="7.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.MarketerProductEntity" Width="2.625" PointX="12.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.OfferMatchEntity" Width="2.625" PointX="1.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.OfferStatusEntity" Width="2.125" PointX="12.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.ProductEntity" Width="2.625" PointX="12.125" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.SupplierEntity" Width="2.125" PointX="8.625" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.SupplierOfferEntity" Width="2.625" PointX="5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreMVPModel.SupplierProductEntity" Width="2.625" PointX="8.25" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_User_bill_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_User_ship_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_Bid_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_User_Retailer" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_BidMatch_Bid" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_RetailerProduct_Retailer" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_RetailerProduct_Product" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="ursCoreMVPModel.FK_BidMatch_Offer" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_SupplierProduct_Product" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="ursCoreMVPModel.FK_SupplierProduct_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreMVPModel.FK_Offer_SupplierProduct" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

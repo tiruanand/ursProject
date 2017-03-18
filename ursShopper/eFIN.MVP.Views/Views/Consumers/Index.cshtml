@@ -1,0 +1,71 @@
+﻿@model IEnumerable<eFIN.MVP.AzureEF.ConsumerEntity>
+
+@{
+    ViewBag.Title = "Consumers";
+}
+@section scripts{
+    <script src="~/Scripts/ClientJS/ConsumerCJS.js"></script>
+    <script src="~/Scripts/ServerJS/ConsumerSJS.js"></script>
+}
+<h2>Consumers</h2>
+<p>
+    @Html.ActionLink("Create New Consumer", "Create")
+</p>
+<div ng-app="ConsumerApp" class="container">
+    <div ng-controller="ConsumerController" id="mainContent">
+        <table class="mainTable" width="100%">
+            <tr>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.marketer_name)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_handle)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_name)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_email)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_phone)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_status)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.offers)
+                </th>
+            </tr>
+            <tr ng-repeat="r in Consumers">
+                <td colspan="7">
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                        <tr id="mainDataRow">
+                            <td class="mainTDData">
+                                {{r.Marketer.Name}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.ConsumerHandle}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.ConsumerName}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.ConsumerEmail}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.ConsumerPhone}}
+                            </td>
+                            <td class="mainTDData">
+                                <input id="ConsumerStatus" type="checkbox" ng-checked="{{r.ConsumerStatus}}" disabled="disabled" />
+                            </td>
+                            <td class="mainTDData">
+                                <input type="button" ng-click="getConsumerOffers(r)" value="Show Offers" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

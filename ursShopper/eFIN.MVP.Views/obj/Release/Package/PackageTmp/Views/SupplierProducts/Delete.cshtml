@@ -1,0 +1,56 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.SupplierProductEntity
+
+@{
+    ViewBag.Title = "Delete SupplierEntity ProductEntity";
+}
+
+<h2>Delete SupplierEntity ProductEntity</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SupplierProductEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierEntity.supplier_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierEntity.supplier_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductEntity.product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductEntity.product_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplierproduct_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplierproduct_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplierproduct_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplierproduct_update)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

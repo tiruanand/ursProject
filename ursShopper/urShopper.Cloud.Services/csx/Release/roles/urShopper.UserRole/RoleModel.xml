@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RoleModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="urShopper.UserRole" version="2.9.6499.4" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <Runtime>
+    <EntryPoint>
+      <NetFxEntryPoint assemblyName="urShopper.UserRole.dll" targetFrameworkVersion="v4.0" />
+    </EntryPoint>
+  </Runtime>
+  <Properties>
+    <Property name="TargetFrameworkVersion" value="v4.5.2" />
+    <Property name="RoleType" value="Web" />
+    <Property name="RoleName" value="urShopper.UserRole" />
+    <Property name="ProjectName" value="urShopper.UserRole" />
+    <Property name="Configuration" value="Release" />
+    <Property name="Platform" value="AnyCPU" />
+    <Property name="SetConfiguration" value="Configuration=Release" />
+    <Property name="SetPlatform" value="Platform=AnyCPU" />
+    <Property name="RoleTargetFramework" value="v4.5.2" />
+    <Property name="OutputDir" value="C:\Learning\Work\LocalMVP\ursShopper\urShopper.Cloud.Services\obj\Release\urShopper.UserRole\" />
+    <Property name="EntryPoint" value="urShopper.UserRole.dll" />
+    <Property name="SourceDir" value="C:\Learning\Work\LocalMVP\ursShopper\urShopper.UserRole\" />
+    <Property name="SitePhysicalPath" value="C:\Learning\Work\LocalMVP\ursShopper\urShopper.Cloud.Services\obj\Release\urShopper.UserRole\" />
+    <Property name="TargetRuntimeVersion" value="v4.0" />
+  </Properties>
+  <Sites>
+    <Site name="Web" physicalDirectory="C:\Learning\Work\LocalMVP\ursShopper\urShopper.Cloud.Services\obj\Release\urShopper.UserRole\">
+      <Bindings>
+        <Binding name="Endpoint1" endpointName="Endpoint1" />
+      </Bindings>
+    </Site>
+  </Sites>
+</RoleModel>

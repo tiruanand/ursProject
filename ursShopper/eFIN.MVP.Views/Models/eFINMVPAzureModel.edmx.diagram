@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c7b10c2e63749349fce36055154ae12" Name="Diagram1">
+        <EntityTypeShape EntityType="ursCoreModel.Address" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.Consumer" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.ConsumerOffer" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.Marketer" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.MarketerProduct" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.OfferMatch" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.OfferStatu" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.Product" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.Supplier" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.SupplierOffer" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.SupplierProduct" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ursCoreModel.sysdiagram" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="ursCoreModel.FK_User_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_User_Address1" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_Bid_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_User_Retailer" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_BidMatch_Bid" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_RetailerProduct_Retailer" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_RetailerProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_BidMatch_Offer" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_SupplierProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_SupplierProduct_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="ursCoreModel.FK_Offer_SupplierProduct" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

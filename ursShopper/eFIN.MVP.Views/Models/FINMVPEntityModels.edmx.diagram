@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="61afb55e024d46288ef3a844f4f46878" Name="Diagram1">
+        <EntityTypeShape EntityType="MVPFINDataModel.Address" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.ConsumerOffer" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.Consumer" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.MarketerProduct" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.Marketer" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.OfferStatu" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.Product" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.SupplierOffer" Width="1.5" PointX="8.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.SupplierProduct" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVPFINDataModel.Supplier" Width="1.5" PointX="3.75" PointY="15.125" IsExpanded="true" />
+        <AssociationConnector Association="MVPFINDataModel.FK_ConsumerBill_ToAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_ConsumerShip_ToAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_ConsumerOffer_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_ConsumerOffer_CustomerOfferStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_ConsumerOffer_MarketerProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_Consumer_ToMarketer" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_MarketerProduct_Marketer" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_MarketerProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_SupplierProduct_ToProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_SupplierOffer_ToSupplierProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="MVPFINDataModel.FK_SupplierProduct_ToSupplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

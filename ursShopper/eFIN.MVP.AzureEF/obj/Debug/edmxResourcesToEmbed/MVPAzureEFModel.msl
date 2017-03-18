@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ursCoreMVPModelStoreContainer" CdmEntityContainer="ursCoreMVPEntities">
+    <EntitySetMapping Name="AddressEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.AddressEntity">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="line_1" ColumnName="line_1" />
+          <ScalarProperty Name="line_2" ColumnName="line_2" />
+          <ScalarProperty Name="line_3" ColumnName="line_3" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="zip_postal_code" ColumnName="zip_postal_code" />
+          <ScalarProperty Name="state_province_county" ColumnName="state_province_county" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="address_create" ColumnName="address_create" />
+          <ScalarProperty Name="address_update" ColumnName="address_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsumerEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.ConsumerEntity">
+        <MappingFragment StoreEntitySet="Consumer">
+          <ScalarProperty Name="consumer_id" ColumnName="consumer_id" />
+          <ScalarProperty Name="marketer_id" ColumnName="marketer_id" />
+          <ScalarProperty Name="bill_address_id" ColumnName="bill_address_id" />
+          <ScalarProperty Name="ship_address_id" ColumnName="ship_address_id" />
+          <ScalarProperty Name="consumer_handle" ColumnName="consumer_handle" />
+          <ScalarProperty Name="consumer_email" ColumnName="consumer_email" />
+          <ScalarProperty Name="consumer_fname" ColumnName="consumer_fname" />
+          <ScalarProperty Name="consumer_mname" ColumnName="consumer_mname" />
+          <ScalarProperty Name="consumer_lname" ColumnName="consumer_lname" />
+          <ScalarProperty Name="consumer_phone" ColumnName="consumer_phone" />
+          <ScalarProperty Name="consumer_status" ColumnName="consumer_status" />
+          <ScalarProperty Name="consumer_create" ColumnName="consumer_create" />
+          <ScalarProperty Name="consumer_update" ColumnName="consumer_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsumerOfferEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.ConsumerOfferEntity">
+        <MappingFragment StoreEntitySet="ConsumerOffer">
+          <ScalarProperty Name="consumeroffer_id" ColumnName="consumeroffer_id" />
+          <ScalarProperty Name="consumer_id" ColumnName="consumer_id" />
+          <ScalarProperty Name="marketerproduct_id" ColumnName="marketerproduct_id" />
+          <ScalarProperty Name="consumeroffer_status_id" ColumnName="consumeroffer_status_id" />
+          <ScalarProperty Name="consumeroffer_date" ColumnName="consumeroffer_date" />
+          <ScalarProperty Name="consumeroffer_qty" ColumnName="consumeroffer_qty" />
+          <ScalarProperty Name="consumeroffer_max_price" ColumnName="consumeroffer_max_price" />
+          <ScalarProperty Name="consumeroffer_end_date" ColumnName="consumeroffer_end_date" />
+          <ScalarProperty Name="consumeroffer_current" ColumnName="consumeroffer_current" />
+          <ScalarProperty Name="consumeroffer_create" ColumnName="consumeroffer_create" />
+          <ScalarProperty Name="consumeroffer_update" ColumnName="consumeroffer_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarketerEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.MarketerEntity">
+        <MappingFragment StoreEntitySet="Marketer">
+          <ScalarProperty Name="marketer_id" ColumnName="marketer_id" />
+          <ScalarProperty Name="marketer_domain" ColumnName="marketer_domain" />
+          <ScalarProperty Name="marketer_type" ColumnName="marketer_type" />
+          <ScalarProperty Name="marketer_name" ColumnName="marketer_name" />
+          <ScalarProperty Name="marketer_create" ColumnName="marketer_create" />
+          <ScalarProperty Name="marketer_update" ColumnName="marketer_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarketerProductEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.MarketerProductEntity">
+        <MappingFragment StoreEntitySet="MarketerProduct">
+          <ScalarProperty Name="marketerproduct_id" ColumnName="marketerproduct_id" />
+          <ScalarProperty Name="marketer_id" ColumnName="marketer_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="marketerproduct_create" ColumnName="marketerproduct_create" />
+          <ScalarProperty Name="marketerproduct_update" ColumnName="marketerproduct_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfferMatchEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.OfferMatchEntity">
+        <MappingFragment StoreEntitySet="OfferMatch">
+          <ScalarProperty Name="offermatch_id" ColumnName="offermatch_id" />
+          <ScalarProperty Name="consumeroffer_id" ColumnName="consumeroffer_id" />
+          <ScalarProperty Name="supplieroffer_id" ColumnName="supplieroffer_id" />
+          <ScalarProperty Name="offermatch_createdate" ColumnName="offermatch_createdate" />
+          <ScalarProperty Name="offermatch_update" ColumnName="offermatch_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfferStatusEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.OfferStatusEntity">
+        <MappingFragment StoreEntitySet="OfferStatus">
+          <ScalarProperty Name="offer_status_id" ColumnName="offer_status_id" />
+          <ScalarProperty Name="offer_status" ColumnName="offer_status" />
+          <ScalarProperty Name="offer_status_description" ColumnName="offer_status_description" />
+          <ScalarProperty Name="offer_status_update" ColumnName="offer_status_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.ProductEntity">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_manufacturer" ColumnName="product_manufacturer" />
+          <ScalarProperty Name="product_sku" ColumnName="product_sku" />
+          <ScalarProperty Name="product_upc" ColumnName="product_upc" />
+          <ScalarProperty Name="product_ean" ColumnName="product_ean" />
+          <ScalarProperty Name="product_gtin" ColumnName="product_gtin" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_description" ColumnName="product_description" />
+          <ScalarProperty Name="product_uom" ColumnName="product_uom" />
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="product_create" ColumnName="product_create" />
+          <ScalarProperty Name="product_update" ColumnName="product_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.SupplierEntity">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="supplier_domain" ColumnName="supplier_domain" />
+          <ScalarProperty Name="supplier_type" ColumnName="supplier_type" />
+          <ScalarProperty Name="supplier_name" ColumnName="supplier_name" />
+          <ScalarProperty Name="supplier_create" ColumnName="supplier_create" />
+          <ScalarProperty Name="supplier_update" ColumnName="supplier_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierOfferEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.SupplierOfferEntity">
+        <MappingFragment StoreEntitySet="SupplierOffer">
+          <ScalarProperty Name="supplieroffer_id" ColumnName="supplieroffer_id" />
+          <ScalarProperty Name="supplierproduct_id" ColumnName="supplierproduct_id" />
+          <ScalarProperty Name="supplieroffer_incl_price" ColumnName="supplieroffer_incl_price" />
+          <ScalarProperty Name="supplieroffer_end_date" ColumnName="supplieroffer_end_date" />
+          <ScalarProperty Name="supplieroffer_create" ColumnName="supplieroffer_create" />
+          <ScalarProperty Name="supplieroffer_timestamp" ColumnName="supplieroffer_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierProductEntities">
+      <EntityTypeMapping TypeName="ursCoreMVPModel.SupplierProductEntity">
+        <MappingFragment StoreEntitySet="SupplierProduct">
+          <ScalarProperty Name="supplierproduct_id" ColumnName="supplierproduct_id" />
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="supplierproduct_create" ColumnName="supplierproduct_create" />
+          <ScalarProperty Name="supplierproduct_update" ColumnName="supplierproduct_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,7 @@
+﻿<Marketers xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Marketer>
+    <Domain>shinystat.com</Domain>
+    <Name>Yabox</Name>
+    <Type>Aggregator</Type>
+  </Marketer>
+</Marketers>

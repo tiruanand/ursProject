@@ -1,0 +1,112 @@
+﻿@model eFIN.MVP.Views.Models.ProductEntity
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProductEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.product_manufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_manufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_sku)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_sku)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_upc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_upc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_ean)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_ean)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_gtin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_gtin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_uom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_uom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_update)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

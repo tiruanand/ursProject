@@ -1,0 +1,64 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.SupplierOfferEntity
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SupplierOfferEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.supplieroffer_incl_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplieroffer_incl_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplieroffer_end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplieroffer_end_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplieroffer_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplieroffer_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplieroffer_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplieroffer_timestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierProductEntity.supplierproduct_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierProductEntity.supplierproduct_id)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

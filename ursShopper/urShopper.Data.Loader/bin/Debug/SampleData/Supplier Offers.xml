@@ -1,0 +1,18 @@
+﻿<SupplierOffers xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <SupplierOffer>
+    <OfferedSupplier>
+      <Name>Amazon.com</Name>
+    </OfferedSupplier>
+    <Offers>
+      <Offer>
+        <OfferedProduct>
+          <SKU>CDSRCAN00032D</SKU>
+        </OfferedProduct>
+        <OfferDate>2016-07-16T07:59:00</OfferDate>
+        <Quantity>1</Quantity>
+        <MaxPrice>430.00</MaxPrice>
+        <EndDate>2016-07-18T23:59:00</EndDate>
+      </Offer>
+    </Offers>
+  </SupplierOffer>
+</SupplierOffers>

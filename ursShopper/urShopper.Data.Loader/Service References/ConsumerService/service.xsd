@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" />
+  <xs:element name="GetConsumer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" minOccurs="0" name="GetConsumerResult" nillable="true" type="q1:Consumer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumerById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsumerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumerByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" minOccurs="0" name="GetConsumerByIdResult" nillable="true" type="q2:Consumer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetConsumerIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllConsumers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllConsumersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" minOccurs="0" name="GetAllConsumersResult" nillable="true" type="q3:ArrayOfConsumer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllConsumersList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllConsumersListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" minOccurs="0" name="GetAllConsumersListResult" nillable="true" type="q4:ArrayOfConsumer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMarketerConsumer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MarkterDomain" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MarketerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerFName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerMName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerLName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMarketerConsumerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveMarketerConsumerResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConsumer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerFName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerMName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerLName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConsumerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveConsumerResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConsumerBillingAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Line3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ZipPostalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="StateProvinceCounty" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConsumerBillingAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveConsumerBillingAddressResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConsumerShippingAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Line3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ZipPostalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="StateProvinceCounty" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConsumerShippingAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveConsumerShippingAddressResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConsumer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConsumerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConsumerById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsumerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConsumerByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumerOffers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumerOffersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" minOccurs="0" name="GetConsumerOffersResult" nillable="true" type="q5:ArrayOfConsumerOffer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConsumerOffer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsumerHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MarketerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ProductSKU" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConsumerOfferDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="OfferValidUpto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ConsumerOfferQty" type="xs:int" />
+        <xs:element minOccurs="0" name="ConsumerOfferMaxPrice" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConsumerOfferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveConsumerOfferResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

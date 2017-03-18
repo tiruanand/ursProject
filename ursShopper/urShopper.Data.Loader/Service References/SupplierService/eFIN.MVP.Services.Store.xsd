@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Supplier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="LastUpdatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Supplier" nillable="true" type="tns:Supplier" />
+  <xs:complexType name="ArrayOfSupplier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true" type="tns:Supplier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSupplier" nillable="true" type="tns:ArrayOfSupplier" />
+  <xs:complexType name="SupplierProducts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfRelatedProduct" />
+      <xs:element minOccurs="0" name="Supplier" nillable="true" type="tns:Supplier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplierProducts" nillable="true" type="tns:SupplierProducts" />
+  <xs:complexType name="ArrayOfRelatedProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RelatedProduct" nillable="true" type="tns:RelatedProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelatedProduct" nillable="true" type="tns:ArrayOfRelatedProduct" />
+  <xs:complexType name="RelatedProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="LastUpdatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelatedProduct" nillable="true" type="tns:RelatedProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GTIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LastUpdatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SKU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPC" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ProductSuppliers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="Suppliers" nillable="true" type="tns:ArrayOfRelatedSupplier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductSuppliers" nillable="true" type="tns:ProductSuppliers" />
+  <xs:complexType name="ArrayOfRelatedSupplier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RelatedSupplier" nillable="true" type="tns:RelatedSupplier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelatedSupplier" nillable="true" type="tns:ArrayOfRelatedSupplier" />
+  <xs:complexType name="RelatedSupplier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="LastUpdatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Supplier" nillable="true" type="tns:Supplier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelatedSupplier" nillable="true" type="tns:RelatedSupplier" />
+  <xs:complexType name="SupplierOffer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Offer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OfferedSupplier" nillable="true" type="tns:Supplier" />
+          <xs:element minOccurs="0" name="Offers" nillable="true" type="tns:ArrayOfOffer" />
+          <xs:element minOccurs="0" name="SupplierId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SupplierOffer" nillable="true" type="tns:SupplierOffer" />
+  <xs:complexType name="Offer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="IsCurrentOffer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastUpdatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MarketerProductId" type="xs:long" />
+      <xs:element minOccurs="0" name="MaxPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OfferDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OfferId" type="xs:long" />
+      <xs:element minOccurs="0" name="OfferedProduct" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:long" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Offer" nillable="true" type="tns:Offer" />
+  <xs:complexType name="ArrayOfOffer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Offer" nillable="true" type="tns:Offer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOffer" nillable="true" type="tns:ArrayOfOffer" />
+  <xs:complexType name="ArrayOfSupplierOffer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplierOffer" nillable="true" type="tns:SupplierOffer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSupplierOffer" nillable="true" type="tns:ArrayOfSupplierOffer" />
+</xs:schema>

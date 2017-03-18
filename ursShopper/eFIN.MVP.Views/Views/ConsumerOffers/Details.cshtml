@@ -1,0 +1,98 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.ConsumerOfferEntity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ConsumerOfferEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.marketerproduct_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marketerproduct_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumeroffer_status_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumeroffer_status_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumeroffer_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumeroffer_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumeroffer_qty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumeroffer_qty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumeroffer_max_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumeroffer_max_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumeroffer_end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumeroffer_end_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumeroffer_current)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumeroffer_current)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumeroffer_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumeroffer_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumeroffer_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumeroffer_update)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumerEntity.consumer_handle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsumerEntity.consumer_handle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.consumeroffer_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

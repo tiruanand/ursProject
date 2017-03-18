@@ -1,0 +1,50 @@
+﻿@model IEnumerable<eFIN.MVP.Views.Models.AzureDataModels.MarketerProductEntity>
+
+@{
+    ViewBag.Title = "Marketer ProductEntities";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New MarketerEntity ProductEntity", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MarketerEntity.marketer_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductEntity.product_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marketerproduct_create)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marketerproduct_update)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MarketerEntity.marketer_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductEntity.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.marketerproduct_create)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.marketerproduct_update)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.marketerproduct_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.marketerproduct_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.marketerproduct_id })
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<eFIN.MVP.AzureEF.ConsumerEntity>
+@{
+    ViewBag.Title = "Consumers";
+}
+@section scripts{
+    <script src="~/Scripts/ClientJS/ConsumerCJS.js"></script>
+    <script src="~/Scripts/ServerJS/ConsumerSJS.js"></script>
+}
+<h2>Consumers</h2>
+<p>
+    @Html.ActionLink("Create New Consumer", "Create")
+</p>
+<div ng-app="ConsumerApp" class="container">
+    <div ng-controller="ConsumerController" id="mainContent">
+        <table class="mainTable" width="100%">
+            <tr>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_id)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_name)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_email)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_phone)
+                </th>
+                <th class="mainTD">
+                    @Html.DisplayNameFor(model => model.consumer_status)
+                </th>
+            </tr>
+
+            <tr ng-repeat="r in Consumers">
+                <td colspan="5">
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                        <tr id="mainDataRow">
+                            <td class="mainTDData">
+                                {{r.Marketer.marketer_name}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.consumer_name}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.consumer_email}}
+                            </td>
+                            <td class="mainTDData">
+                                {{r.consumer_phone}}
+                            </td>
+                            <td class="mainTDData">
+                                <input id="consumer_status" type="checkbox" ng-checked="{{r.consumer_status}}" disabled="disabled" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" ng-init="getConsumerOffers(r)">
+                                <div ng-show="r.ConsumerOffers.length" ng-repeat="co in r.ConsumerOffers">
+                                    <div class="col-sm-3" id="rcornersDiv">
+                                        <table class="productTable">
+                                            <tr>
+                                                <td>Quantity</td>
+                                                <td>{{co.consumeroffer_qty}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Price</td>
+                                                <td>{{co.product_price | currency}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Max Price</td>
+                                                <td>{{co.consumeroffer_max_price | currency}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Offer End Date:</td>
+                                                <td class="mainTDData" nowrap>{{(co.consumeroffer_end_date | jsonDate)|date:'dd, MMMM yyyy hh:mm:ss a'}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                @*View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.*@
+
+                                @*<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>*@
+
+                                <div ng-show="r.ConsumerOffers.length==0">
+                                    <span class="noDetails">
+                                        No offers from consumer.
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

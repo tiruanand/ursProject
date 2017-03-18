@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MarketerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/eFIN.MVP.Services.Store" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMarketerService_GetMarketer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketer" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerId" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetAllMarketers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMarketers" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetAllMarketers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMarketersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetAllMarketersList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMarketersList" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetAllMarketersList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMarketersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_SaveMarketer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMarketer" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_SaveMarketer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMarketerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_DeleteMarketer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMarketer" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_DeleteMarketer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMarketerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_DeleteMarketerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMarketerById" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_DeleteMarketerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMarketerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_SaveMarketerProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMarketerProduct" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_SaveMarketerProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMarketerProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_AddProductToMarketer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToMarketer" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_AddProductToMarketer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToMarketerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_RemoveProductFromMarketer_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromMarketer" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_RemoveProductFromMarketer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromMarketerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketerProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerProduct" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketerProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketerProductId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerProductId" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketerProductId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerProductIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketerProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerProducts" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetMarketerProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketerProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetProductMarketers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductMarketers" />
+  </wsdl:message>
+  <wsdl:message name="IMarketerService_GetProductMarketers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductMarketersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMarketerService">
+    <wsdl:operation name="GetMarketer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/GetMarketer" message="tns:IMarketerService_GetMarketer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerResponse" message="tns:IMarketerService_GetMarketer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerId" message="tns:IMarketerService_GetMarketerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerIdResponse" message="tns:IMarketerService_GetMarketerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMarketers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/GetAllMarketers" message="tns:IMarketerService_GetAllMarketers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/GetAllMarketersResponse" message="tns:IMarketerService_GetAllMarketers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMarketersList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/GetAllMarketersList" message="tns:IMarketerService_GetAllMarketersList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/GetAllMarketersListResponse" message="tns:IMarketerService_GetAllMarketersList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMarketer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/SaveMarketer" message="tns:IMarketerService_SaveMarketer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/SaveMarketerResponse" message="tns:IMarketerService_SaveMarketer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMarketer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/DeleteMarketer" message="tns:IMarketerService_DeleteMarketer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/DeleteMarketerResponse" message="tns:IMarketerService_DeleteMarketer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMarketerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/DeleteMarketerById" message="tns:IMarketerService_DeleteMarketerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/DeleteMarketerByIdResponse" message="tns:IMarketerService_DeleteMarketerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMarketerProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/SaveMarketerProduct" message="tns:IMarketerService_SaveMarketerProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/SaveMarketerProductResponse" message="tns:IMarketerService_SaveMarketerProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToMarketer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/AddProductToMarketer" message="tns:IMarketerService_AddProductToMarketer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/AddProductToMarketerResponse" message="tns:IMarketerService_AddProductToMarketer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductFromMarketer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/RemoveProductFromMarketer" message="tns:IMarketerService_RemoveProductFromMarketer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/RemoveProductFromMarketerResponse" message="tns:IMarketerService_RemoveProductFromMarketer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketerProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerProduct" message="tns:IMarketerService_GetMarketerProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerProductResponse" message="tns:IMarketerService_GetMarketerProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketerProductId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerProductId" message="tns:IMarketerService_GetMarketerProductId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerProductIdResponse" message="tns:IMarketerService_GetMarketerProductId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketerProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerProducts" message="tns:IMarketerService_GetMarketerProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/GetMarketerProductsResponse" message="tns:IMarketerService_GetMarketerProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductMarketers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMarketerService/GetProductMarketers" message="tns:IMarketerService_GetProductMarketers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMarketerService/GetProductMarketersResponse" message="tns:IMarketerService_GetProductMarketers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMarketerService" type="tns:IMarketerService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMarketer">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/GetMarketer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketerId">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/GetMarketerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMarketers">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/GetAllMarketers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMarketersList">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/GetAllMarketersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMarketer">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/SaveMarketer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMarketer">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/DeleteMarketer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMarketerById">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/DeleteMarketerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMarketerProduct">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/SaveMarketerProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToMarketer">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/AddProductToMarketer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductFromMarketer">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/RemoveProductFromMarketer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketerProduct">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/GetMarketerProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketerProductId">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/GetMarketerProductId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketerProducts">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/GetMarketerProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductMarketers">
+      <soap:operation soapAction="http://tempuri.org/IMarketerService/GetProductMarketers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MarketerService">
+    <wsdl:port name="BasicHttpBinding_IMarketerService" binding="tns:BasicHttpBinding_IMarketerService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/eFIN.MVP.Services.Store/urShopper/MarketerService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<eFIN.MVP.Views.Models.AzureDataModels.OfferStatusEntity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_status_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_status_update)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.offer_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offer_status_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offer_status_update)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.offer_status_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.offer_status_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.offer_status_id })
+        </td>
+    </tr>
+}
+
+</table>

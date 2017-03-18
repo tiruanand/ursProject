@@ -1,0 +1,58 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.SupplierOfferEntity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SupplierOfferEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.supplieroffer_incl_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplieroffer_incl_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplieroffer_end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplieroffer_end_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplieroffer_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplieroffer_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplieroffer_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplieroffer_timestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierProductEntity.supplierproduct_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierProductEntity.supplierproduct_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.supplieroffer_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

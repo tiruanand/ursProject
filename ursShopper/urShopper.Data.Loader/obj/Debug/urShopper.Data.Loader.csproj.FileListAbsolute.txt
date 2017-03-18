@@ -1,0 +1,34 @@
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Supplier Offers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Consumer Offers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Products.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Marketers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Suppliers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Consumers.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\urShopper.Data.Loader.dll.config
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\urShopper.Data.Loader.dll
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\urShopper.Data.Loader.pdb
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\EntityFramework.dll
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\EntityFramework.SqlServer.dll
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\EntityFramework.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\bin\Debug\EntityFramework.SqlServer.xml
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\obj\Debug\urShopper.Data.Loader.dll
+C:\Learning\Work\LocalMVP\ursShopper\urShopper.Data.Loader\obj\Debug\urShopper.Data.Loader.pdb
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Supplier Offers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Consumer Offers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Products.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Marketers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Suppliers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\SampleData\Consumers.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\urShopper.Data.Loader.dll.config
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\urShopper.Data.Loader.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\urShopper.Data.Loader.pdb
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\EntityFramework.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\EntityFramework.SqlServer.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\EntityFramework.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\EntityFramework.SqlServer.xml
+C:\Anand\ursShopper\urShopper.Data.Loader\obj\Debug\urShopper.Data.Loader.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\obj\Debug\urShopper.Data.Loader.pdb
+C:\Anand\ursShopper\urShopper.Data.Loader\obj\Debug\urShopper.Data.Loader.csprojResolveAssemblyReference.cache
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\log4net.dll
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\log4net.pdb
+C:\Anand\ursShopper\urShopper.Data.Loader\bin\Debug\log4net.xml

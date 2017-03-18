@@ -1,0 +1,120 @@
+﻿@model eFIN.MVP.Views.Models.AzureDataModels.ConsumerEntity
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ConsumerEntity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_handle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_handle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_mname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_mname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_create)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_create)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_update)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.line_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.line_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1.line_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1.line_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarketerEntity.marketer_domain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarketerEntity.marketer_domain)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

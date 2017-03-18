@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="urShopperViews" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Learning\\Work\\LocalMVP\\urShopper\\eFIN\.MVP\.Views\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Learning\\Work\\LocalMVP\\urShopper\\eFIN\.MVP\.Views\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="eFIN.MVP.AzureEF.ursCoreMVPEntities-Web.config Connection String" description="" value="Data Source=urshopper.database.windows.net;Initial Catalog=ursCore;Persist Security Info=True;User ID=anandti;Password=oDDy6ge!QP!fXNT;Application Name=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Learning\\Work\\LocalMVP\\urShopper\\eFIN\.MVP\.Views\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='eFIN.MVP.AzureEF.ursCoreMVPEntities']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-eFIN.MVP.Views-20160504115548.mdf;Initial Catalog=aspnet-eFIN.MVP.Views-20160504115548;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Learning\\Work\\LocalMVP\\urShopper\\eFIN\.MVP\.Views\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
